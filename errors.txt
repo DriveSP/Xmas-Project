@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 17: expected statement.
-    name = "Rodrigo"
-         ^
+The label after_menu is defined twice, at File "game/script.rpy", line 133:
+    label after_menu:
+and File "game/script.rpy", line 148:
+    label after_menu:
+
+
+The label after_menu is defined twice, at File "game/script.rpy", line 148:
+    label after_menu:
+and File "game/script.rpy", line 163:
+    label after_menu:
+
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Sun Jan  5 00:26:04 2025
+Wed Apr  2 10:46:28 2025
