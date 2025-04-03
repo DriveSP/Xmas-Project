@@ -2,17 +2,26 @@
 
 # Declara los personajes usados en el juego como en el ejemplo:
 
+#Variables
+
+define fails_minigame = 0
+
+#Characters
 
 define player = Character("[name]")
 define oliver = Character("Oliver")
 define namine = Character("Naminé")
 define naomi = DynamicCharacter("naomi_name")
 
+#Images
+
 image Eleanor Idle = "characters/Naomi/EleanorIdle.png"
 image EleanorIdle = "EleanorIdle.png"
 image Naomi Happy = "characters/Naomi/NaomiFeliz.png"
 image phoneItem = "items/phone.png"
 image snow park street = "scenarios/SnowParkStreet.jpg"
+
+#Sounds
 
 define audio.childplaying = "sounds/children-playing-pixabay.ogg"
 
@@ -126,6 +135,7 @@ label start:
             #play sound boxHit
             "Intenté saltarlas, pero mi empeine rozó la caja más alta del montón y tropecé."
             player "(Argh... ¡Vamos!)"
+            $ fails_minigame += 1
         "Evitar":
             #play sound dodge
             "Logré esquivarlas fácilmente, pasando solo por un lado."
@@ -141,6 +151,7 @@ label start:
             #play sound fallGround
             "Intenté correr sobre el hielo, pero me resbalé y caí de culo."
             player "(¡Maldita sea! ¡Levántate!)"
+            $ fails_minigame += 1
         "Deslizar":
             #play sound ice
             "Salté y me deslicé por el hielo cual pingüino."
@@ -152,14 +163,15 @@ label start:
 
     menu minigames_3:
         
-        "Evitar":
-            #play sound hitPaper
-            "Intenté esquivar a los hombres echándome a un lado, pero no había manera de evitar el cartel. Lo rompí en el acto."
-            player "¡Perdón!"
         "Agachar":
             #play sound dodge
             "El cartel estaba lo suficientemente alto como para que pudiera agacharme y pasar por debajo."
             player "(¡Uff, ese sí estuvo cerca!)"
+        "Evitar":
+            #play sound hitPaper
+            "Intenté esquivar a los hombres echándome a un lado, pero no había manera de evitar el cartel. Lo rompí en el acto."
+            player "¡Perdón!"
+            $ fails_minigame += 1
             
     label after_minigames_3:
 
@@ -187,12 +199,25 @@ label start:
     "Cuanto más me acercaba a ella, más fuerte me latía el corazón. La ansiedad empezaba a apoderarse de mi cuerpo."
     "Mientras más me acercaba, más podía ver el reflejo dorado de su cabello. Vestía un jersey rojo y, al verme, se levantó del banco para recibirme."
     "Sus ojos color esmeralda me miraban, pero sin el brillo característico de siempre. Sin embargo, a pesar de todo, me recibió con una sonrisa dulce y genuina."
-    namine "Buenas, [name]. Qué bueno que al fin hayas venido."
+    namine "Buenas, [name]. Qué bien que al fin hayas venido."
     player "Yo... lo siento mucho... Me distraje un momento y… no me di cuenta del tiempo."
     player "(Tiempo...)"
     "Una palabra que puede tener muchos significados subjetivos, pero que para todos vale lo mismo. Porque el tiempo… no se recupera."
     "Ella simplemente me sonrió y, con delicadeza, sacó de detrás de su mano una hortensia azul para regalármela."
     "La tomé sin entender del todo, pero le devolví la sonrisa. Quería que supiera que, de alguna manera, todo estaba bien."
+    oliver "Bueno, no nos quedemos aquí. Vamos a desayunar algo, ¿no?"
+    namine "Sí, tenemos un montón de comida en el banquete. Puedes coger lo que te apetezca."
+    "Miré hacia la mesa y vi que, posiblemente, contenía toda la pirámide alimenticia que alguna vez observé en los carteles de los pediatras cuando era niño."
+    "Desde mocktails refinados y mini tartaletas de queso brie con mermelada de higos, hasta un rack de cordero con costra de pistachos y puré de zanahoria."
+    mainCharacter "(¡Pero si esto no es un desayuno, es un festín!)"
+    oliver "¿Y esa cara. [name]? ¡Se te está cayendo la baba."
+    "Los tres empezamos a reír por su comentario mientras nos dirigíamos a comer."
+    "Al llegar, como todo era libre, comenzamos a picotear lo que veíamos. Yo fui directo a los postres y cogí una tarta de queso con mermelada y nata."
+    oliver "¿Ese va a ser tu estupendo desayuno?"
+    mainCharacter "¿Y lo malo?"
+
+    if 
+        namine "Es una gran manera "
 
     # Finaliza el juego:
 
