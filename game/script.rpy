@@ -21,10 +21,6 @@ image Naomi Happy = "characters/Naomi/NaomiFeliz.png"
 image phoneItem = "items/phone.png"
 image snow park street = "scenarios/SnowParkStreet.jpg"
 
-#Sounds
-
-define audio.childplaying = "sounds/children-playing-pixabay.ogg"
-
 # El juego comienza aquí.
 
 label start:
@@ -36,16 +32,12 @@ label start:
     # nombre "bg room.png" or "bg room.jpg" para que se muestre aquí.
 
     scene snow park street
-    play sound "sounds/children-playing-pixabay.ogg" loop
+    play sound "sounds/children-playing.ogg" loop
     play music "music/Rainbow - fiftysounds.ogg" loop
 
     # Muestra un personaje: Se usa un marcador de posición. Es posible
     # reemplazarlo añadiendo un archivo llamado "eileen happy.png" al directorio
     # 'images'.
-
-    
-    # show EleanorIdle at left
-    # show player at right
 
     # Presenta las líneas del diálogo.
 
@@ -59,17 +51,17 @@ label start:
     "Cogí aire con fuerza y noté de forma repentina cómo mis pulmones se helaban. Sentía como si una capa de hielo los abrazara lentamente."
 
     stop music fadeout 1.0
-    play sound "sounds/vibrating-phone-pixabay.ogg" loop
+    play sound "sounds/vibrating-phone.ogg" loop
 
     show phoneItem
     "..."
     player "(¿Quién me está llamando ahora?)"
 
     stop sound
-    play sound "sounds/notification-pixabay.ogg"
+    play sound "sounds/notification.ogg"
 
     "..."
-    play music "music/80s-thrash-metal-track-retro-heavy-metal-energy-pixabay.ogg" loop
+    play music "music/Push - Alex Productions.ogg" loop
     oliver "¡[name], ¿qué haces que todavía no estás aquí?!"
     player "¡¿Oliver?!"
     "Oliver ha sido mi compañero de clase desde el jardín de infancia. Es un chico muy enérgico y se vuelve bastante agresivo cuando la gente llega tarde a los sitios."
@@ -80,8 +72,7 @@ label start:
     oliver "Que sean 5, tío. Ya está terminando la segunda pieza."
 
     stop music fadeout 1.0
-    # play sound hangPhone
-    # stop sound
+    play sound "sounds/cell-phone-hang-up.ogg"
     hide phoneItem
 
     "..."
@@ -89,16 +80,17 @@ label start:
     "El viento helaba mi garganta; mis pulmones se congelaban con el aire frío que respiraba de forma constante y a un ritmo acelerado. Sin embargo, tenía que llegar a tiempo."
     "Tenía que escucharla tocar el piano."
 
-    # play sound catSound
+    play sound "sounds/cat-meow.ogg"
 
     player "(¿Un gato?)"
     "Efectivamente, vi a un gato balanceándose sobre la carretera y corriendo. Mi instinto me hizo ir rápidamente hacia él."
     "Tenía que rescatarlo. Era mi deber como ciudadano. ¿No es lo que se hace en este tipo de casos?"
+
+    play sound "sounds/truck-signal.ogg"
+    
     "Cogí al gato mientras veía ese camión intimidante acercándose a nosotros. Me puse de espaldas para protegerlo con mi cuerpo. Notaba cómo ese enorme monstruo de metal estaba a punto de arrollarnos."
 
-    # play sound hornTruck
-    # play sound catSound
-    # play sound holdClothes
+    play sound "sounds/grab-clothes.ogg"
 
     "De repente, me vi en la acera, a salvo con el felino. Alguien me había agarrado por el cuello del jersey y me había tirado hacia atrás."
 
@@ -125,19 +117,19 @@ label start:
     "Volví a salir corriendo en dirección a la casa de Naminé, intentando evitar y saltar todos los obstáculos que se me presentaban."
 
     # Minijuego obstáculos
-    # play music minigame
+    play music "Jingle Bells - Mystery Mammal.ogg"
 
     player "(¡¿Un montón de cajas?!)"
 
     menu minigames:
         
         "Saltar":
-            #play sound boxHit
+            play sound "sounds/box-crash.ogg"
             "Intenté saltarlas, pero mi empeine rozó la caja más alta del montón y tropecé."
             player "(Argh... ¡Vamos!)"
             $ fails_minigame += 1
         "Evitar":
-            #play sound dodge
+            play sound "sounds/dodge.ogg"
             "Logré esquivarlas fácilmente, pasando solo por un lado."
             player "(Demasiado fácil.)"
             
@@ -148,12 +140,12 @@ label start:
     menu minigames_2:
         
         "Correr":
-            #play sound fallGround
+            play sound "sounds/body-fall.ogg"
             "Intenté correr sobre el hielo, pero me resbalé y caí de culo."
             player "(¡Maldita sea! ¡Levántate!)"
             $ fails_minigame += 1
         "Deslizar":
-            #play sound ice
+            play sound "sounds/ice-slide.ogg"
             "Salté y me deslicé por el hielo cual pingüino."
             player "(¡Esto tampoco me va a parar!)"
             
@@ -164,17 +156,18 @@ label start:
     menu minigames_3:
         
         "Agachar":
-            #play sound dodge
+            play sound "sounds/dodge.ogg"
             "El cartel estaba lo suficientemente alto como para que pudiera agacharme y pasar por debajo."
             player "(¡Uff, ese sí estuvo cerca!)"
         "Evitar":
-            #play sound hitPaper
+            play sound "sounds/paper-crash.ogg"
             "Intenté esquivar a los hombres echándome a un lado, pero no había manera de evitar el cartel. Lo rompí en el acto."
             player "¡Perdón!"
             $ fails_minigame += 1
             
     label after_minigames_3:
 
+    stop music    
     # Fin minijuego obstáculos
 
     # Configurar variables globales tras el minijuego
@@ -219,17 +212,17 @@ label start:
     player "(¿Una flor viva... en esta época del año?)"
     "No le pregunté, solamente la guardé dentro de mi chaqueta sin pedir explicaciones sobre la flor."
     hide Namine_Happy_PlaceHolder
-    show right Namine_PlaceHolder
-    show left  Oliver_PlaceHolder
+    show Namine_PlaceHolder at right
+    show Oliver_PlaceHolder at left
     oliver "Bueno, no nos quedemos aquí. Vamos a desayunar algo, ¿no?"
     namine "Sí, tenemos un montón de comida en el banquete. Puedes coger lo que te apetezca."
-    hide right Namine_PlaceHolder
-    hide left  Oliver_PlaceHolder
+    hide Namine_PlaceHolder
+    hide Oliver_PlaceHolder
     "Miré hacia la mesa y vi que, posiblemente, contenía toda la pirámide alimenticia que alguna vez observé en los carteles de los pediatras cuando era niño."
     "Desde mocktails refinados y mini tartaletas de queso brie con mermelada de higos, hasta costillas de cordero con costra de pistachos y puré de zanahoria."
     player "(¡Pero si esto no es un desayuno, es un festín!)"
-    show right Namine_PlaceHolder
-    show left  Oliver_PlaceHolder
+    show Namine_PlaceHolder at right
+    show Oliver_PlaceHolder at left
     oliver "¿Y esa cara. [name]? ¡Se te está cayendo la baba!"
     "Los tres empezamos a reír por su comentario mientras nos dirigíamos a comer."
     "Al llegar, como todo era libre, comenzamos a picotear lo que veíamos. Yo fui directo a los postres y cogí una tarta de queso con mermelada y nata."
@@ -239,24 +232,25 @@ label start:
     player "Mejor, así no se derrite."
 
     if fails_minigame == 3:
-        hide right Namine_PlaceHolder
-        hide left  Oliver_PlaceHolder
-        show right Namine_Happy_PlaceHolder
+        hide Namine_PlaceHolder
+        hide Oliver_PlaceHolder
+        show Namine_Happy_PlaceHolder
         namine "Es una gran manera de recuperar energía. Parece que el camino hasta aquí te ha supuesto un problema."
         "Me dijo con una sonrisa mientras sacaba su pañuelo y empezaba a quitarme suciedad de la cara, a la vez que me sacudía el pelo lleno de nieve."
     elif fails_minigame >= 1 and fails_minigame < 3:
-        hide right Namine_PlaceHolder
-        hide left  Oliver_PlaceHolder
-        show right Namine_Happy_PlaceHolder
+        hide Namine_PlaceHolder
+        hide Oliver_PlaceHolder
+        show Namine_Happy_PlaceHolder
         namine "Es una gran manera de recuperar energía. Te noto un poco con el pelo blanco"
         "Al parecer, se dio cuenta de todas las caídas que tuve hasta venir aquí. Me sentí algo avergonzado, aunque ella simplemente sonrió."
     else:
-        hide right Namine_PlaceHolder
+        hide Namine_PlaceHolder
         oliver "Bueno, me sorprende que hayas llegado de una pieza. Con el hambre que tienes y lo rojo que estas, seguro hiciste un buen maratón."
 
-    hide left  Oliver_PlaceHolde
+    hide Namine_PlaceHolder
+    hide Oliver_PlaceHolder
     "Justo cuando estaba terminando de comer mi tarta, vi la cabeza de la chica de antes asomándose en el jardín. Rápidamente, dejé el plato en la mesa y fui dentro de la casa para salir corriendo a la calle."
-    show Oliver_PlaceHolde
+    show Oliver_PlaceHolder
     oliver "¡Eh! ¡¿pero a dónde vas?!"         
 
     # Finaliza el juego:
