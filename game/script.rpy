@@ -63,7 +63,7 @@ label start:
 
     show phoneItem
     "..."
-    player "¿Quién me está llamando ahora?"
+    player "(¿Quién me está llamando ahora?)"
 
     stop sound
     play sound "sounds/notification-pixabay.ogg"
@@ -86,7 +86,7 @@ label start:
 
     "..."
     "En cuanto colgué el móvil, me dispuse a correr con todas mis fuerzas hacia la casa de Naminé, esquivando semáforos y peatones a mi paso."
-    "El viento helaba mi garganta; mis pulmones se congelaban con el aire gélido que respiraba de forma constante y a un ritmo acelerado. Sin embargo, tenía que llegar a tiempo."
+    "El viento helaba mi garganta; mis pulmones se congelaban con el aire frío que respiraba de forma constante y a un ritmo acelerado. Sin embargo, tenía que llegar a tiempo."
     "Tenía que escucharla tocar el piano."
 
     # play sound catSound
@@ -180,44 +180,84 @@ label start:
     # Configurar variables globales tras el minijuego
     
     "Fue un viaje duro, pero logré llegar a la casa de Naminé. Estaba sudando, pero al menos seguía vivo."
-    "Corrí hasta su puerta y llamé. Oliver me abrió rápidamente, con una expresión apresurada, pero era demasiado tarde."
+    "Corrí hasta su puerta y llamé. Oliver me abrió rápidamente, con una expresión apresurada."
+    show Oliver_PlaceHolder
+    oliver "¡Vamos! ¡Corre!"
+    hide Oliver_PlaceHolder
+    "Pero era demasiado tarde..."
     "Cuando llegué al jardín de su casa, solo alcancé a escuchar los acordes finales de la última pieza que ella había planeado tocar."
     player "(Mierda.)"
     "No había otra forma de expresarlo. A pesar de todas las personas que estaban de pie, yo me sentía solo, martirizándome por no haber llegado a tiempo."
     "Este concierto era muy especial para Naminé, pues era su forma de despedirse de sus padres por última vez. Ellos… murieron en un accidente de tráfico hace un mes."
     "La música es la manera en que Naminé se expresa. Los acordes, las notas… son las palabras que usa para mostrar sus sentimientos. El piano… es el idioma con el cual proyecta esas emociones."
+    show Oliver_PlaceHolder
     oliver "¡Reacciona, tío!"
-    "Sacudí la cabeza brevemente y miré a Oliver con atención. Me había sacado de ese limbo de auto-tortura. Para mí, fueron varios minutos de sufrimiento; para él, solo un segundo efímero en el que me quedé mirando a la nada."
+    "Sacudí la cabeza brevemente y miré a Oliver con atención. Me había sacado de ese limbo de autotortura. Para mí, fueron varios minutos de sufrimiento; para él, solo un segundo efímero en el que me quedé mirando a la nada."
     player "P-perdona, Oliver. ¿Cu-cuándo es la siguiente pieza."
     oliver "¿Siguiente pieza? [name], ella no va a volver a tocar más por hoy..."
     "La respuesta era obvia. Hice la pregunta solo para decir algo, aunque sonara más despistado de lo habitual."
     "O quizá, en el fondo, aún albergaba un atisbo de esperanza de que no hubiera llegado tan tarde… De que tal vez no la había cagado tanto."
     oliver "Venga, al menos salúdala."
     "Oliver, siempre el más optimista del grupo, intentó animarme tras ver mi cara larga. Me dio un par de palmadas en la espalda y juntos nos dirigimos a hablar con ella."
-    "Naminé vive en una casa enorme, tanto que solo su jardín trasero es del tamaño de una casa y media como la mía. Había banquetes y globos de colores que combinaban con las hortensias azules del lugar."
-    "Hortensias azules… Posiblemente su flor favorita, ya que su madre siempre las cultivaba y cuidaba con esmero."
+    hide Oliver_PlaceHolder
+    "Naminé vive en una casa enorme, tanto que solo su jardín trasero es del tamaño de una casa y media como la mía. Había banquetes y globos de colores que combinaban con el blanco de la nieve que tapaba las hierbas."
+    "Su jardín se vuelve triste en invierno, ya que las flores que siempre están en su jardín pierden su color por culpa de los días gélidos."
+    player "(Este jardín se ve triste ahora mismo…)" 
+    "Posiblemente su flor favorita, ya que su madre siempre las cultivaba y cuidaba con esmero."
     "Cuanto más me acercaba a ella, más fuerte me latía el corazón. La ansiedad empezaba a apoderarse de mi cuerpo."
-    "Mientras más me acercaba, más podía ver el reflejo dorado de su cabello. Vestía un jersey rojo y, al verme, se levantó del banco para recibirme."
+    "Mientras me aproximaba, más podía ver el reflejo dorado de su cabello rubio. Vestía un jersey rojo, se levantó del banco, y al verme, se dirigió a recibirme."
     "Sus ojos color esmeralda me miraban, pero sin el brillo característico de siempre. Sin embargo, a pesar de todo, me recibió con una sonrisa dulce y genuina."
+    show Namine_PlaceHolder
     namine "Buenas, [name]. Qué bien que al fin hayas venido."
     player "Yo... lo siento mucho... Me distraje un momento y… no me di cuenta del tiempo."
+    hide Namine_PlaceHolder
     player "(Tiempo...)"
-    "Una palabra que puede tener muchos significados subjetivos, pero que para todos vale lo mismo. Porque el tiempo… no se recupera."
-    "Ella simplemente me sonrió y, con delicadeza, sacó de detrás de su mano una hortensia azul para regalármela."
-    "La tomé sin entender del todo, pero le devolví la sonrisa. Quería que supiera que, de alguna manera, todo estaba bien."
+    "Una palabra que puede tener muchos significados subjetivos, pero que para todos vale lo mismo. El tiempo… no se recupera."
+    show Namine_Happy_PlaceHolder
+    "Ella simplemente me sonrió y, con delicadeza, sacó de detrás de su mano una flor. Simplemente me la dio."
+    "La tomé sin entender del todo, pero le devolví la sonrisa. Ella quería que supiera que, de alguna manera, todo estaba bien."
+    player "(¿Una flor viva... en esta época del año?)"
+    "No le pregunté, solamente la guardé dentro de mi chaqueta sin pedir explicaciones sobre la flor."
+    hide Namine_Happy_PlaceHolder
+    show right Namine_PlaceHolder
+    show left  Oliver_PlaceHolder
     oliver "Bueno, no nos quedemos aquí. Vamos a desayunar algo, ¿no?"
     namine "Sí, tenemos un montón de comida en el banquete. Puedes coger lo que te apetezca."
+    hide right Namine_PlaceHolder
+    hide left  Oliver_PlaceHolder
     "Miré hacia la mesa y vi que, posiblemente, contenía toda la pirámide alimenticia que alguna vez observé en los carteles de los pediatras cuando era niño."
-    "Desde mocktails refinados y mini tartaletas de queso brie con mermelada de higos, hasta un rack de cordero con costra de pistachos y puré de zanahoria."
-    mainCharacter "(¡Pero si esto no es un desayuno, es un festín!)"
-    oliver "¿Y esa cara. [name]? ¡Se te está cayendo la baba."
+    "Desde mocktails refinados y mini tartaletas de queso brie con mermelada de higos, hasta costillas de cordero con costra de pistachos y puré de zanahoria."
+    player "(¡Pero si esto no es un desayuno, es un festín!)"
+    show right Namine_PlaceHolder
+    show left  Oliver_PlaceHolder
+    oliver "¿Y esa cara. [name]? ¡Se te está cayendo la baba!"
     "Los tres empezamos a reír por su comentario mientras nos dirigíamos a comer."
     "Al llegar, como todo era libre, comenzamos a picotear lo que veíamos. Yo fui directo a los postres y cogí una tarta de queso con mermelada y nata."
     oliver "¿Ese va a ser tu estupendo desayuno?"
-    mainCharacter "¿Y lo malo?"
+    player "¿Y lo malo?"
+    oliver "No sé, estamos en invierno ¿sabes?"
+    player "Mejor, así no se derrite."
 
-    if 
-        namine "Es una gran manera "
+    if fails_minigame == 3:
+        hide right Namine_PlaceHolder
+        hide left  Oliver_PlaceHolder
+        show right Namine_Happy_PlaceHolder
+        namine "Es una gran manera de recuperar energía. Parece que el camino hasta aquí te ha supuesto un problema."
+        "Me dijo con una sonrisa mientras sacaba su pañuelo y empezaba a quitarme suciedad de la cara, a la vez que me sacudía el pelo lleno de nieve."
+    elif fails_minigame >= 1 and fails_minigame < 3:
+        hide right Namine_PlaceHolder
+        hide left  Oliver_PlaceHolder
+        show right Namine_Happy_PlaceHolder
+        namine "Es una gran manera de recuperar energía. Te noto un poco con el pelo blanco"
+        "Al parecer, se dio cuenta de todas las caídas que tuve hasta venir aquí. Me sentí algo avergonzado, aunque ella simplemente sonrió."
+    else:
+        hide right Namine_PlaceHolder
+        oliver "Bueno, me sorprende que hayas llegado de una pieza. Con el hambre que tienes y lo rojo que estas, seguro hiciste un buen maratón."
+
+    hide left  Oliver_PlaceHolde
+    "Justo cuando estaba terminando de comer mi tarta, vi la cabeza de la chica de antes asomándose en el jardín. Rápidamente, dejé el plato en la mesa y fui dentro de la casa para salir corriendo a la calle."
+    show Oliver_PlaceHolde
+    oliver "¡Eh! ¡¿pero a dónde vas?!"         
 
     # Finaliza el juego:
 
