@@ -12,6 +12,7 @@ define player = Character("[name]")
 define oliver = Character("Oliver")
 define namine = Character("Naminé")
 define naomi = DynamicCharacter("naomi_name")
+define guest = DynamicCharacter("guest_name")
 
 #Images
 
@@ -20,6 +21,15 @@ image EleanorIdle = "EleanorIdle.png"
 image Naomi Happy = "characters/Naomi/NaomiFeliz.png"
 image phoneItem = "items/phone.png"
 image snow park street = "scenarios/SnowParkStreet.jpg"
+
+#Sounds
+
+define audio.phone = "sounds/vibrating-phone.ogg"
+define audio.notification = "sounds/notification.ogg"
+define audio.hangup = "sounds/cell-phone-hang-up.ogg"
+define audio.meow = "sounds/cat-meow.ogg"
+define audio.dodge = "sounds/dodge.ogg"
+#define audio.run = "sounds/"
 
 # El juego comienza aquí.
 
@@ -51,14 +61,14 @@ label start:
     "Cogí aire con fuerza y noté de forma repentina cómo mis pulmones se helaban. Sentía como si una capa de hielo los abrazara lentamente."
 
     stop music fadeout 1.0
-    play sound "sounds/vibrating-phone.ogg" loop
+    play sound phone loop
 
     show phoneItem
     "..."
     player "(¿Quién me está llamando ahora?)"
 
     stop sound
-    play sound "sounds/notification.ogg"
+    play sound notification
 
     "..."
     play music "music/Push - Alex Productions.ogg" loop
@@ -72,7 +82,7 @@ label start:
     oliver "Que sean 5, tío. Ya está terminando la segunda pieza."
 
     stop music fadeout 1.0
-    play sound "sounds/cell-phone-hang-up.ogg"
+    play sound hangup
     hide phoneItem
 
     "..."
@@ -117,7 +127,7 @@ label start:
     "Volví a salir corriendo en dirección a la casa de Naminé, intentando evitar y saltar todos los obstáculos que se me presentaban."
 
     # Minijuego obstáculos
-    play music "Jingle Bells - Mystery Mammal.ogg"
+    play music "music/Jingle Bells - Mystery Mammal.ogg" loop
 
     player "(¡¿Un montón de cajas?!)"
 
@@ -129,7 +139,7 @@ label start:
             player "(Argh... ¡Vamos!)"
             $ fails_minigame += 1
         "Evitar":
-            play sound "sounds/dodge.ogg"
+            play sound dodge
             "Logré esquivarlas fácilmente, pasando solo por un lado."
             player "(Demasiado fácil.)"
             
@@ -156,7 +166,7 @@ label start:
     menu minigames_3:
         
         "Agachar":
-            play sound "sounds/dodge.ogg"
+            play sound dodge
             "El cartel estaba lo suficientemente alto como para que pudiera agacharme y pasar por debajo."
             player "(¡Uff, ese sí estuvo cerca!)"
         "Evitar":
@@ -167,7 +177,7 @@ label start:
             
     label after_minigames_3:
 
-    stop music    
+    stop music fadeout 1.0   
     # Fin minijuego obstáculos
 
     # Configurar variables globales tras el minijuego
@@ -251,7 +261,56 @@ label start:
     hide Oliver_PlaceHolder
     "Justo cuando estaba terminando de comer mi tarta, vi la cabeza de la chica de antes asomándose en el jardín. Rápidamente, dejé el plato en la mesa y fui dentro de la casa para salir corriendo a la calle."
     show Oliver_PlaceHolder
-    oliver "¡Eh! ¡¿pero a dónde vas?!"         
+    oliver "¡Eh! ¡¿pero a dónde vas?!"  
+    "Llegué afuera y la vi huir, girando la esquina."
+
+    menu prologue:
+        
+        "Correr":
+            # play sound correr
+            "Fui rápidamente a girar esa misma esquina para perseguirla. No podía perderla de vista."
+            player "¡Eh, espera!"
+            "La chica parecía ignorarme, corriendo con todas sus fuerzas, intentando evitarme. Nos estábamos acercando cada vez más a zonas más transitadas, concretamente la plaza."
+            "Ella no paraba de dar giros bruscos para poder perderme. Sin embargo, en este punto yo no podía permitirme parar."
+            "Al entrar en la plaza, todo estaba lleno de puestos de mercado, por lo que la perdí de vista en un santiamén."
+            "Me detuve a descansar un poco y continué caminando a paso lento, mirando hacia todos lados, pero volví a perderla de vista..."
+            "Dándome por vencido, me dispuse a sentarme cerca de una fuente. Allí pude ver varios niños correteando y jugando. Poco a poco una sonrisa invadía mi rostro, viendo la genuidad e inocencia de aquellos chicos."
+            "A pesar de ello, uno de los niños estaba siendo demasiado agresivo, empujando a uno por su rabieta. Justo detrás de ese chico había un escalón algo elevado, apuntando a la altura perfecta para encontrarse con la nuca del muchacho."
+            "Mis pupilas se encogieron. Me levanté rápidamente, alzando el brazo mientras corría hacia el chico. Sin embargo, vi como una sombra se movía rápidamente por el espacio, parecía casi inhumano."
+            "La silueta negra atrapó al niño en brazos antes de que cayera y, cuando volví a parpadear, esa oscura figura se convirtió en la chica que estaba buscando..."
+            "Me detuve en seco, paralizado, viendo cómo aquella misteriosa chica sostenía al chico."
+
+            $ guest_name = "Niño"
+
+            guest "¡Ay, gracias señorita!"
+            naomi "Ten más cuidado la próxima vez, ¿vale?"
+            guest "¡Sí! ¡Hasta otra!"
+
+            "El niño volvió con el grupo como si nada hubiese pasado. Aquel chico aún no era consciente de que su vida pendía de un hilo hace tan solo unos segundos."
+            "La chica se levantó y me miró con una sonrisa."
+
+            naomi "Nos volvemos a ver."
+            "Sacudí la cabeza para que así mi rostro volviese a relajarse. Seguídamente, bajé un poco la cabeza, rascándome la nuca, reflejando así mi pequeña timidez en aquel preciso momento."
+            player "Ho-hola... no... me dijiste tu nombre la última vez."
+            "La chica simplemente sonrió antes de responderme."
+            naomi "Naomi, mi nombre es Naomi."
+
+            $ naomi_name = "Naomi"
+
+            player "Así que Naomi... ¡Encantado de conocerte! Yo... me llamo [name]"
+            naomi "Un placer, [name]. Y... por cierto... parece que te están buscando."
+            player "¿Hmm?"
+            "Unos policías se dirigían hacia mí. Por lo que se veía en su rostro parecía que no venían de buenas."
+            "Atrás de ellos salió luego otra persona, una chica que vestía de forma muy parecida a Naomi, señalándome muy enfurecida."
+            player "(¡No me digas que estaba persiguiendo a otra persona!)"
+
+
+        "Quedarse":
+            play sound "sounds/ice-slide.ogg"
+            "Salté y me deslicé por el hielo cual pingüino."
+            player "(¡Esto tampoco me va a parar!)"
+            
+    label after_prologue:       
 
     # Finaliza el juego:
 
