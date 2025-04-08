@@ -191,12 +191,12 @@ label start:
     "Cuando llegué al jardín de su casa, solo alcancé a escuchar los acordes finales de la última pieza que ella había planeado tocar."
     player "(Mierda.)"
     "No había otra forma de expresarlo. A pesar de todas las personas que estaban de pie, yo me sentía solo, martirizándome por no haber llegado a tiempo."
-    "Este concierto era muy especial para Naminé, pues era su forma de despedirse de sus padres por última vez. Ellos… murieron en un accidente de tráfico hace un mes."
+    "Este concierto significaba mucho para Naminé. Era su forma de despedirse de sus padres por última vez. Ellos… murieron en un accidente de tráfico hace un mes."
     "La música es la manera en que Naminé se expresa. Los acordes, las notas… son las palabras que usa para mostrar sus sentimientos. El piano… es el idioma con el cual proyecta esas emociones."
     show Oliver_PlaceHolder
     oliver "¡Reacciona, tío!"
     "Sacudí la cabeza brevemente y miré a Oliver con atención. Me había sacado de ese limbo de autotortura. Para mí, fueron varios minutos de sufrimiento; para él, solo un segundo efímero en el que me quedé mirando a la nada."
-    player "P-perdona, Oliver. ¿Cu-cuándo es la siguiente pieza."
+    player "P-perdona, Oliver. ¿C-cuándo es la siguiente pieza?"
     oliver "¿Siguiente pieza? [name], ella no va a volver a tocar más por hoy..."
     "La respuesta era obvia. Hice la pregunta solo para decir algo, aunque sonara más despistado de lo habitual."
     "O quizá, en el fondo, aún albergaba un atisbo de esperanza de que no hubiera llegado tan tarde… De que tal vez no la había cagado tanto."
@@ -204,11 +204,12 @@ label start:
     "Oliver, siempre el más optimista del grupo, intentó animarme tras ver mi cara larga. Me dio un par de palmadas en la espalda y juntos nos dirigimos a hablar con ella."
     hide Oliver_PlaceHolder
     "Naminé vive en una casa enorme, tanto que solo su jardín trasero es del tamaño de una casa y media como la mía. Había banquetes y globos de colores que combinaban con el blanco de la nieve que tapaba las hierbas."
-    "Su jardín se vuelve triste en invierno, ya que las flores que siempre están en su jardín pierden su color por culpa de los días gélidos."
-    player "(Este jardín se ve triste ahora mismo…)" 
-    "Posiblemente su flor favorita, ya que su madre siempre las cultivaba y cuidaba con esmero."
+    "Su jardín se vuelve triste en invierno, ya que las flores que siempre nacen pierden su color por culpa de los días gélidos."
+    player "(Este jardín se ve triste ahora mismo… sobre todo sin aquellas extrañas flores que plantaba su madre.)" 
+    "Posiblemente el tipo de flor más especial del jardín, ya que su madre siempre las cultivaba y cuidaba con esmero."
     "Cuanto más me acercaba a ella, más fuerte me latía el corazón. La ansiedad empezaba a apoderarse de mi cuerpo."
-    "Mientras me aproximaba, más podía ver el reflejo dorado de su cabello rubio. Vestía un jersey rojo, se levantó del banco, y al verme, se dirigió a recibirme."
+    "Mientras más me aproximaba, más podía ver el reflejo dorado de su cabello. Llevaba puesto un jersey rojo y pantalones vaqueros cortos junto a unas medias térmicas."
+    "Ella se levantó del banco, y al verme, vino a recibirme."
     "Sus ojos color esmeralda me miraban, pero sin el brillo característico de siempre. Sin embargo, a pesar de todo, me recibió con una sonrisa dulce y genuina."
     show Namine_PlaceHolder
     namine "Buenas, [name]. Qué bien que al fin hayas venido."
@@ -224,19 +225,19 @@ label start:
     hide Namine_Happy_PlaceHolder
     show Namine_PlaceHolder at right
     show Oliver_PlaceHolder at left
-    oliver "Bueno, no nos quedemos aquí. Vamos a desayunar algo, ¿no?"
+    oliver "Bueno, no nos quedemos aquí. Vamos a almorzar algo, ¿no?"
     namine "Sí, tenemos un montón de comida en el banquete. Puedes coger lo que te apetezca."
     hide Namine_PlaceHolder
     hide Oliver_PlaceHolder
     "Miré hacia la mesa y vi que, posiblemente, contenía toda la pirámide alimenticia que alguna vez observé en los carteles de los pediatras cuando era niño."
-    "Desde mocktails refinados y mini tartaletas de queso brie con mermelada de higos, hasta costillas de cordero con costra de pistachos y puré de zanahoria."
-    player "(¡Pero si esto no es un desayuno, es un festín!)"
+    "Desde mocktails refinados y mini tartitas de queso brie con mermelada de higos, hasta costillas de cordero con costra de pistachos y puré de zanahoria."
+    player "(¡Pero si esto no es un almuerzo, es un festín!)"
     show Namine_PlaceHolder at right
     show Oliver_PlaceHolder at left
     oliver "¿Y esa cara. [name]? ¡Se te está cayendo la baba!"
     "Los tres empezamos a reír por su comentario mientras nos dirigíamos a comer."
     "Al llegar, como todo era libre, comenzamos a picotear lo que veíamos. Yo fui directo a los postres y cogí una tarta de queso con mermelada y nata."
-    oliver "¿Ese va a ser tu estupendo desayuno?"
+    oliver "¿Ese va a ser tu estupendo almuerzo?"
     player "¿Y lo malo?"
     oliver "No sé, estamos en invierno ¿sabes?"
     player "Mejor, así no se derrite."
@@ -258,11 +259,13 @@ label start:
         oliver "Bueno, me sorprende que hayas llegado de una pieza. Con el hambre que tienes y lo rojo que estas, seguro hiciste un buen maratón."
 
     hide Namine_PlaceHolder
+    hide Namine_Happy_PlaceHolder
     hide Oliver_PlaceHolder
     "Justo cuando estaba terminando de comer mi tarta, vi la cabeza de la chica de antes asomándose en el jardín. Rápidamente, dejé el plato en la mesa y fui dentro de la casa para salir corriendo a la calle."
     show Oliver_PlaceHolder
     oliver "¡Eh! ¡¿pero a dónde vas?!"  
-    "Llegué afuera y la vi huir, girando la esquina."
+    hide Oliver_PlaceHolder
+    "Llegué afuera y la vi huir, doblando la esquina."
 
     menu prologue:
         
@@ -276,7 +279,7 @@ label start:
             "Me detuve a descansar un poco y continué caminando a paso lento, mirando hacia todos lados, pero volví a perderla de vista..."
             "Dándome por vencido, me dispuse a sentarme cerca de una fuente. Allí pude ver varios niños correteando y jugando. Poco a poco una sonrisa invadía mi rostro, viendo la genuidad e inocencia de aquellos chicos."
             "A pesar de ello, uno de los niños estaba siendo demasiado agresivo, empujando a uno por su rabieta. Justo detrás de ese chico había un escalón algo elevado, apuntando a la altura perfecta para encontrarse con la nuca del muchacho."
-            "Mis pupilas se encogieron. Me levanté rápidamente, alzando el brazo mientras corría hacia el chico. Sin embargo, vi como una sombra se movía rápidamente por el espacio, parecía casi inhumano."
+            "Mis pupilas se encogieron. Me levanté rápidamente, alzando el brazo mientras corría hacia el chico. Sin embargo, vi como una sombra se movía ligeramente por el espacio, parecía casi inhumano."
             "La silueta negra atrapó al niño en brazos antes de que cayera y, cuando volví a parpadear, esa oscura figura se convirtió en la chica que estaba buscando..."
             "Me detuve en seco, paralizado, viendo cómo aquella misteriosa chica sostenía al chico."
 
@@ -289,10 +292,13 @@ label start:
             "El niño volvió con el grupo como si nada hubiese pasado. Aquel chico aún no era consciente de que su vida pendía de un hilo hace tan solo unos segundos."
             "La chica se levantó y me miró con una sonrisa."
 
+            show Naomi_Happy_PlaceHolder
             naomi "Nos volvemos a ver."
             "Sacudí la cabeza para que así mi rostro volviese a relajarse. Seguídamente, bajé un poco la cabeza, rascándome la nuca, reflejando así mi pequeña timidez en aquel preciso momento."
             player "Ho-hola... no... me dijiste tu nombre la última vez."
             "La chica simplemente sonrió antes de responderme."
+            hide Naomi_Happy_PlaceHolder
+            show Naomi_PlaceHolder
             naomi "Naomi, mi nombre es Naomi."
 
             $ naomi_name = "Naomi"
@@ -300,6 +306,7 @@ label start:
             player "Así que Naomi... ¡Encantado de conocerte! Yo... me llamo [name]"
             naomi "Un placer, [name]. Y... por cierto... parece que te están buscando."
             player "¿Hmm?"
+            hide Naomi_PlaceHolder
             "Unos policías se dirigían hacia mí. Por lo que se veía en su rostro parecía que no venían de buenas."
             "Atrás de ellos salió luego otra persona, una chica que vestía de forma muy parecida a Naomi, señalándome muy enfurecida."
             player "(¡No me digas que estaba persiguiendo a otra persona!)"
