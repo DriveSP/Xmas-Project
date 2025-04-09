@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-The label after_menu is defined twice, at File "game/script.rpy", line 133:
-    label after_menu:
-and File "game/script.rpy", line 148:
-    label after_menu:
-
-
-The label after_menu is defined twice, at File "game/script.rpy", line 148:
-    label after_menu:
-and File "game/script.rpy", line 163:
-    label after_menu:
-
+File "game/script.rpy", line 95: expected 'image_name_component' not found.
+    scene "backgrounds/Cat.png"
+          ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Wed Apr  2 10:46:28 2025
+Wed Apr  9 18:29:50 2025
