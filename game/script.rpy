@@ -15,7 +15,8 @@ define naomi = DynamicCharacter("naomi_name")
 define guest = DynamicCharacter("guest_name")
 
 #Images
-
+# https://steamcommunity.com/app/495480/discussions/0/1693785669872968376/
+# https://imgur.com/a/GK5QQ
 image Eleanor Idle = "characters/Naomi/EleanorIdle.png"
 image EleanorIdle = "EleanorIdle.png"
 image Naomi Happy = "characters/Naomi/NaomiFeliz.png"
