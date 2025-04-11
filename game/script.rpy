@@ -2,7 +2,12 @@
 
 # Declara los personajes usados en el juego como en el ejemplo:
 
-#Variables
+#Stats player
+
+define lie = 0
+define truth = 0
+
+#Others variables
 
 define fails_minigame = 0
 
@@ -13,6 +18,8 @@ define oliver = Character("Oliver")
 define namine = Character("Naminé")
 define naomi = DynamicCharacter("naomi_name")
 define guest = DynamicCharacter("guest_name")
+define guest2 = DynamicCharacter("guest2_name")
+define guest3 = DynamicCharacter("guest3_name")
 
 #Images
 # https://steamcommunity.com/app/495480/discussions/0/1693785669872968376/
@@ -36,6 +43,8 @@ image street snow 1 = "backgrounds/Street-snow.png"
 image street snow 6 = "backgrounds/Street-snow6.png"
 image street minigames = "backgrounds/Street-snow2.png"
 image center town = "backgrounds/Street-snow8.png"
+image namine house = "backgrounds/Naminehouse.png"
+image namine garden = "backgrounds/Naminegarden.png"
 
 #Sounds
 
@@ -201,6 +210,8 @@ label start:
 
     # Configurar variables globales tras el minijuego
     
+    scene namine house
+
     "Fue un viaje duro, pero logré llegar a la casa de Naminé. Estaba sudando, pero al menos seguía vivo."
     "Corrí hasta su puerta y llamé. Oliver me abrió rápidamente, con una expresión apresurada."
     show Oliver_PlaceHolder
@@ -248,6 +259,9 @@ label start:
     namine "Sí, tenemos un montón de comida en el banquete. Puedes coger lo que te apetezca."
     hide NamineDefault
     hide Oliver_PlaceHolder
+
+    scene namine garden
+
     "Miré hacia la mesa y vi que, posiblemente, contenía toda la pirámide alimenticia que alguna vez observé en los carteles de los pediatras cuando era niño."
     "Desde mocktails refinados y mini tartitas de queso brie con mermelada de higos, hasta costillas de cordero con costra de pistachos y puré de zanahoria."
     player "(¡Pero si esto no es un almuerzo, es un festín!)"
@@ -332,6 +346,27 @@ label start:
             "Unos policías se dirigían hacia mí. Por lo que se veía en su rostro parecía que no venían de buenas."
             "Atrás de ellos salió luego otra persona, una chica que vestía de forma muy parecida a Naomi, señalándome muy enfurecida."
             player "(¡No me digas que estaba persiguiendo a otra persona!)"
+
+            $ guest_name = "Policía"
+            $ guest2_name = "Chica"
+
+            guest "¡Eh tú! Será mejor que vengas a darnos una explicación"
+            "Los policías se acercaron con la chica. Yo, por obvias razones, no moví ni un solo músculo de mis pies."
+            guest "Esta chica ha dicho que llevas bastante minutos corriendo detrás de ella. ¿No es así?"
+            "El policía buscaba la confirmación de la chica. Ella asintió un par de veces antes de responder, mientras fruncía el ceño de forma malhumorada."
+            guest2 "Así es agente. ¡Me lleva persiguiendo como siete manzanas antes de llegar a la plaza!"
+            menu lietrue:
+                "Mentir":
+                    $ lie += 1
+                    player "¡E-eso es mentira! Simplemente tenía prisa para llegar a la plaza para no perderme los descuentos de ahora..."
+                    guest2 "¡Pero si cogí un desvíos para evitarte! ¡Hubieras llegado antes por otro camino!"
+                    player "(¡Mierda!)"
+                    "De repente, noté como alguien me abrazó del brazo izquierdo. Al girar mi rostro, vi a Naomi."
+                    naomi "¡Viene conmigo agente!"
+                "Decir la verdad":
+                    $ truth += 1
+                    player "¡La confundí con otra chica que viste muy parecida a ella!"
+                    guest2 "Sí, claro... ¿quién?"
 
 
         "Quedarse":
