@@ -386,9 +386,17 @@ label start:
             naomi "Te vi un poco en apuros desde lejos, así que vine a ver que pasa."
             player "Literalmente... me has salvado dos veces hoy. ¿Cómo es posible que hayas aparecido esas dos veces para ayudarme?"
             naomi "Podría decirse que soy una especie de súper heroína. O... tu ángel de la guarda"
-            "Al decir esa últimas palabras mis mejillas empezaron a ruborizarse."
+            "Al decir esas últimas palabras mis mejillas empezaron a ruborizarse."
             naomi "Vaya... parece que estás cogiendo frío."
+            player "N-no te preocupes. Estoy bien realmente, habrá sido de correr antes al ver hasta aquí."
+            naomi "Está bien. Toma, puede quedarte el resto."
+            "Naomi me ofreció lo que quedaba de castañas con una sonrisa, para luego darse la vuelta y alzar su brazo izquierdo para despedirse alegremente."
+            naomi "¡Hasta otra, [name]!"
+            "Le devolví la sonrisa mientras también me despedía de ella alzando mi diestra. Tras ello empecé a comer las castañas a la vez que salía de la plaza dirigiéndome de nuevo a casa de Naminé."
 
+            "Tras pasear por las calles y acabarme las castañas, empecé a desperazarme estirando los brazos hacia arriba. Seguidamente busqué el móvil por los bolsillo de mi chaqueta, y ahí fue cuando noté que la flor que me dio Naminé no estaba."
+            player "(No... ¡No puede ser!)"
+            
         "Quedarse":
             play sound "sounds/ice-slide.ogg"
             "Salté y me deslicé por el hielo cual pingüino."
