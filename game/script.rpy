@@ -358,16 +358,36 @@ label start:
             menu lietrue:
                 "Mentir":
                     $ lie += 1
-                    player "¡E-eso es mentira! Simplemente tenía prisa para llegar a la plaza para no perderme los descuentos de ahora..."
-                    guest2 "¡Pero si cogí un desvíos para evitarte! ¡Hubieras llegado antes por otro camino!"
+                    player "¡E-eso es mentira! Simplemente tenía prisa para llegar a la plaza y no perderme los descuentos de ahora..."
+                    guest2 "¡Pero si cogí un desvío para evitarte! ¡Hubieras llegado antes por otro camino!"
                     player "(¡Mierda!)"
-                    "De repente, noté como alguien me abrazó del brazo izquierdo. Al girar mi rostro, vi a Naomi."
-                    naomi "¡Viene conmigo agente!"
+                    "De repente, noté como alguien me abrazó el brazo izquierdo. Al girar mi rostro, vi a Naomi, sujetando una bolsa de castañas calientes."
+                    naomi "¡Viene conmigo agente! Habíamos quedado para tomar algo y comprar algunas cosas de oferta."
                 "Decir la verdad":
                     $ truth += 1
                     player "¡La confundí con otra chica que viste muy parecida a ella!"
                     guest2 "Sí, claro... ¿quién?"
+                    "Al señalar donde estaba Naomi ya no había nadie. Empecé a sudar mientras mi músculos comenzaban también a temblar."
+                    player "(¿Dónde coño ha ido?)"
+                    "Los policías reflejaban un rostro dubitativo mientras me cogían del brazo rápidamente."
+                    "De repente, Naomi apareció agarrándome el otro brazo, tirando de él suavemente. Mientras sujetaba una bolsa de castañas calientes."
+                    naomi "¡Perdonen agentes! ¡Viene conmigo! Había ido un momento a comprar algo para comer."
+            label lietrue:
 
+            "Los policías se fijaron en Naomi y luego en la otra chica. Pudieron deducir que se parecían bastante en la ropa que llevaban."
+            guest2 "A-ah... pero llevabas la m-misma ro-"
+            naomi "¿Pasa algo?"
+            "Naomi arqueó una ceja a la chica, extrañada. Desde mi punto de vista, podía ver claramente como una de sus comisuras temblaban, intentando aguantar la compostura y no reirse de la situación. Parecía que se estaba divirtiendo."
+            guest "Bueno, parece que todo ha sido un mal entendido. Lo siento mucho muchachos, disfrutad del paseo."
+            "La desconocida no sabía que decir, simplemente suspiró pesadamente y se disculpó. A partir de ahí, simplemente siguió su camino por la plaza."
+            "Miré a Naomi a la vez que ella hizo lo mismo conmigo. Ambos empezamos a sonreir intentando aguantar la carcajada, pero que inevitablemente salió. El momento era demasiado subrealista como para no liberar todos los nervios de golpe."
+            "Ella sonrió y extendió la bolsa de castañas para que cogiese una."
+            player "Gracias, no solo por las castañas, también por librarme de una buena."
+            naomi "Te vi un poco en apuros desde lejos, así que vine a ver que pasa."
+            player "Literalmente... me has salvado dos veces hoy. ¿Cómo es posible que hayas aparecido esas dos veces para ayudarme?"
+            naomi "Podría decirse que soy una especie de súper heroína. O... tu ángel de la guarda"
+            "Al decir esa últimas palabras mis mejillas empezaron a ruborizarse."
+            naomi "Vaya... parece que estás cogiendo frío."
 
         "Quedarse":
             play sound "sounds/ice-slide.ogg"
