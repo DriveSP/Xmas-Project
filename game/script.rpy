@@ -7,6 +7,10 @@
 define lie = 0
 define truth = 0
 
+#Global variables
+
+define callbackNamine = 0
+
 #Others variables
 
 define fails_minigame = 0
@@ -145,7 +149,7 @@ label start:
     "La misteriosa adolescente se fue inesperadamente rápido, corriendo. Quería agradecerle por rescatarnos a ambos, pero parecía que tenía prisa."
     "El gato me miró y maulló, lamiendo luego mi mano."
     player "(¿Ha sido un placer? Ni siquiera me has dicho tu nombre...)" 
-    player "Haa..."
+    player "Ahh..."
     "Suspiré, intentando calmarme por toda la adrenalina que había experimentado en tan solo un momento. Luego, comencé a reír."
     player "(Es muy atípico ver a personas tan alegres de mi edad. O al menos eso aparenta...)"
     "Dejé al gato en la acera y le di un par de caricias. Saqué el móvil del bolsillo, y la adrenalina que había experimentado anteriormente fue solo un pequeño atisbo de la que me invadió ahora, pensando en Naminé."
@@ -396,7 +400,40 @@ label start:
 
             "Tras pasear por las calles y acabarme las castañas, empecé a desperazarme estirando los brazos hacia arriba. Seguidamente busqué el móvil por los bolsillo de mi chaqueta, y ahí fue cuando noté que la flor que me dio Naminé no estaba."
             player "(No... ¡No puede ser!)"
-            
+            "Entré en pánico y me puse buscar por todos los lados donde había pasado para buscar la flor. Pero todo se volvió más difícil de buscar cuando volvió a nevar."
+            "Las calles cada vez estaban más cubiertas de nieve que antes. Todo lo que hubiese en el suelo posiblemente ya había sido tapado, pero aún así... yo seguía apartando la nieve, quemándome las manos por el frío. Con la esperanza de encontrar esa flor."
+            "Me levanté y la noche ya había caído. Las farolas se encendían poco a poco, y yo... simplemente me quité la nieve que podía de la cabeza, para luego dirigirme a mi casa cabizbajo."
+            "Cogí el móvil y empecé a revisarlo. Tenía las notificaciones en silencio, así que no me di cuenta de todos los mensajes que me habían mandado hasta entonces."
+            "Oliver y Naminé estaban preocupados por mí."
+            player "Ahh..."
+            "Suspiré mientras guardaba el móvil mientras pensaba en como dejé de nuevo a mis amigos tirados."
+            "No escuché a Naminé tocar el piano."
+            "No me quedé con ella el resto el día."
+            "No hice que supiera de mí en todo el día."
+            "Perdí el único regalo que me hizo hoy."
+            player "(Soy un completo desastre.)"
+            player "(¿Debería llamarla?)"
+
+            menu callback:
+                "Llamarla":
+                    $ collbackNamine += 1
+                    "El número se quedaría comunicando."
+                    player "Ah..."
+                    player "(Se habrá quedado dormida. Es tarde ya.)"
+                "No llamarla":
+                    player "(Seguramente esté durmiendo. Será mejor no molestarla.)"
+            label callback:
+
+            player "(Es hora de irse a casa, [name])"
+            "Caminé un largo tiempo, por dar un paseo lento, hasta llegar a mi casa."
+            "Tras volver mis padres ya se habían acostado. Me habían dejado la cena caliente dentro del microondas, así que la saqué para comer mientras cogía el móvil para ver a que hora había llegado."
+            player "(Las diez...)"
+            "La una de la noche."
+            "Tardé unas dos horas en llegar a casa al ritmo desanimado con el que andaba. Pero me pasé más tiempo intentando encontrar el regalo de Naminé, unas tres o cuatro horas dando vueltas."
+            "Dejé media comida en la mesa. No tenía un humor muy alto como para tener el estómago realmente vacío. Tiré lo que quedaba, eché el plato en el fregadero, y me fui directamente a la cama."
+            "Solamente quería cerrar los ojos, descansar y dejar de pensar. Pero el día se repetía una y otra vez en mi mente. Oliver... el regalo... Naminé... el gato... Naomi..."
+            player ("Naomi...")
+            "Pensaba si mañana la volvería a ver una vez más."
         "Quedarse":
             play sound "sounds/ice-slide.ogg"
             "Salté y me deslicé por el hielo cual pingüino."
