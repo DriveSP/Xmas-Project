@@ -435,9 +435,23 @@ label start:
             player ("Naomi...")
             "Pensaba si mañana la volvería a ver una vez más."
         "Quedarse":
-            play sound "sounds/ice-slide.ogg"
-            "Salté y me deslicé por el hielo cual pingüino."
-            player "(¡Esto tampoco me va a parar!)"
+            "Me quedé parado en el sitio, entrecerrando los ojos, pensando si podría haber sido la chica de antes."
+            "Oliver y Naminé llegaron atrás mía. Se quedaron mirando en la misma dirección que yo."
+            show NamineDefault at right
+            show Oliver_PlaceHolder at right
+            namime "¿Pasa algo?"
+            oliver "¿Ha dónde ibas con tanta prisa tío?"
+            player "No... no es nada."
+            hide NamineDefault
+            hide Oliver_PlaceHolder
+            "Me quedé mirando a la esquina como si hubiese visto a un fantasma mientras me giraba para volver a entrar a casa de Naminé."
+            player "Volvamos a dentro, me confundí con otra cosa."
+            show Oliver_PlaceHolder
+            oliver "Estás perdiendo la cabeza."
+            player "Jeje, ¿tú crees?"
+            namine "Comer tarta de queso en invierno ha hecho que se te congele la cabeza. Tus neuronas ahora piensan más despacio. Seguro que te has imaginado un fantasma."
+            "Todos empezamos a reir cuando Naminé soltó tanta palabrería para meterse conmigo."
+            plyaer "Sí... Seguro es eso. Tengo que empezar a comer según el tiempo de una vez. Jajaja."
             
     label after_prologue:       
 
