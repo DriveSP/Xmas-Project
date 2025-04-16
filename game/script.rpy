@@ -144,7 +144,7 @@ label start:
     show NaomiHappy
     naomi "¡Muchas gracias!"
     "Mostró una sonrisa entre dientes. Parecía una chica agradable a simple vista."
-    naomi "Deberías tener más cuidado la próxima vez. Bueno, ha sido un placer. ¡Adiós!"
+    naomi "Deberías tener más cuidado la próxima vez. Ha sido un placer. ¡Adiós!"
     hide NaomiHappy
     "La misteriosa adolescente se fue inesperadamente rápido, corriendo. Quería agradecerle por rescatarnos a ambos, pero parecía que tenía prisa."
     "El gato me miró y maulló, lamiendo luego mi mano."
@@ -376,7 +376,7 @@ label start:
                     "Los policías reflejaban un rostro dubitativo mientras me cogían del brazo rápidamente."
                     "De repente, Naomi apareció agarrándome el otro brazo, tirando de él suavemente. Mientras sujetaba una bolsa de castañas calientes."
                     naomi "¡Perdonen agentes! ¡Viene conmigo! Había ido un momento a comprar algo para comer."
-            label lietrue:
+            label after_lietrue:
 
             "Los policías se fijaron en Naomi y luego en la otra chica. Pudieron deducir que se parecían bastante en la ropa que llevaban."
             guest2 "A-ah... pero llevabas la m-misma ro-"
@@ -422,7 +422,7 @@ label start:
                     player "(Se habrá quedado dormida. Es tarde ya.)"
                 "No llamarla":
                     player "(Seguramente esté durmiendo. Será mejor no molestarla.)"
-            label callback:
+            label after_callback:
 
             player "(Es hora de irse a casa, [name])"
             "Caminé un largo tiempo, por dar un paseo lento, hasta llegar a mi casa."
@@ -432,7 +432,7 @@ label start:
             "Tardé unas dos horas en llegar a casa al ritmo desanimado con el que andaba. Pero me pasé más tiempo intentando encontrar el regalo de Naminé, unas tres o cuatro horas dando vueltas."
             "Dejé media comida en la mesa. No tenía un humor muy alto como para tener el estómago realmente vacío. Tiré lo que quedaba, eché el plato en el fregadero, y me fui directamente a la cama."
             "Solamente quería cerrar los ojos, descansar y dejar de pensar. Pero el día se repetía una y otra vez en mi mente. Oliver... el regalo... Naminé... el gato... Naomi..."
-            player ("Naomi...")
+            player "(Naomi...)"
             "Pensaba si mañana la volvería a ver una vez más."
         "Quedarse":
             "Me quedé parado en el sitio, entrecerrando los ojos, pensando si podría haber sido la chica de antes."

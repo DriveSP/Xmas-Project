@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 95: expected 'image_name_component' not found.
-    scene "backgrounds/Cat.png"
-          ^
+The label lietrue is defined twice, at File "game/script.rpy", line 362:
+            menu lietrue:
+and File "game/script.rpy", line 379:
+            label lietrue:
+
+
+The label callback is defined twice, at File "game/script.rpy", line 417:
+            menu callback:
+and File "game/script.rpy", line 425:
+            label callback:
+
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Wed Apr  9 18:29:50 2025
+Wed Apr 16 13:20:03 2025
