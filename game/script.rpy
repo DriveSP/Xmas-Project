@@ -6,6 +6,8 @@
 
 define lie = 0
 define truth = 0
+define peaceful = 0
+define agressive = 0
 
 #Global variables
 
@@ -416,7 +418,7 @@ label start:
 
             menu callback:
                 "Llamarla":
-                    $ collbackNamine += 1
+                    $ callbackNamine += 1
                     "El número se quedaría comunicando."
                     player "Ah..."
                     player "(Se habrá quedado dormida. Es tarde ya.)"
@@ -435,8 +437,8 @@ label start:
             player "(Naomi...)"
             "Pensaba si mañana la volvería a ver una vez más."
         "Quedarse":
-            "Me quedé parado en el sitio, entrecerrando los ojos, pensando si podría haber sido la chica de antes."
-            "Oliver y Naminé llegaron atrás mía. Se quedaron mirando en la misma dirección que yo."
+            "Me quedé quieto en el sitio, entrecerrando los ojos, pensando si podría haber sido la chica de antes."
+            "Oliver y Naminé llegaron atrás mía. Estaban mirando en la misma dirección que yo."
             show NamineDefault at right
             show Oliver_PlaceHolder at right
             namime "¿Pasa algo?"
@@ -444,15 +446,56 @@ label start:
             player "No... no es nada."
             hide NamineDefault
             hide Oliver_PlaceHolder
-            "Me quedé mirando a la esquina como si hubiese visto a un fantasma mientras me giraba para volver a entrar a casa de Naminé."
+            "Me quedé observando a la esquina como si hubiese visto a un fantasma mientras me giraba para volver a entrar a casa de Naminé."
             player "Volvamos a dentro, me confundí con otra cosa."
             show Oliver_PlaceHolder
             oliver "Estás perdiendo la cabeza."
             player "Jeje, ¿tú crees?"
             namine "Comer tarta de queso en invierno ha hecho que se te congele la cabeza. Tus neuronas ahora piensan más despacio. Seguro que te has imaginado un fantasma."
             "Todos empezamos a reir cuando Naminé soltó tanta palabrería para meterse conmigo."
-            plyaer "Sí... Seguro es eso. Tengo que empezar a comer según el tiempo de una vez. Jajaja."
-            
+            player "Sí... Seguro que es eso. Tengo que empezar a comer según el tiempo de una vez. Jajaja."
+            "Volvimos a entrar en casa, pero esta vez cuando fuimos al jardín todo lo que estabamos comiendo había desaparecido."
+            oliver "¿En serio? ¿Se acaban de comer toda la comida que justo nosotros estabamos comiendo?"
+            naminé "Vaya, eso sí ha sido casualidad."
+            "Empecé a mirar por los alrededores a ver si encontraba algún sospechoso. Y de pronto vi..."
+            player "(¡¿Un animal?!)"
+            "Parecía una especie de ardilla gigante lo que cacé con la mirada. Estaba metiéndose entre los arbustos mientras lo señalaba."
+            player "Chicos... ¡creo que nuestra respuesta está justo ahí!"
+            oliver "¡Un bicharraco!"
+            namine "Sólo parece una ardilla."
+            "Los tres fuimos a los arbustos a ver si podíamos encontrarla. Teníamos que sacarla de ahí antes de que armara un jaleo dentro del jardín."
+            oliver "¿Y si alguno de nosotros se pone al otro lado de la valla? La parte de afuera, ya saben... por si van por allí."
+            namine "Eso es una buena idea. Podemos ir tú y yo, [name]. Oliver seguro que puede solo, es buen atleta."
+            oliver "Ah, claro. Como Oliver es bueno en los deportes tiene que quedarse siempre solo ¿no? Pues que sepáis que no os necesito."
+            player "Jaja. Sí, claro."
+            "Naminé y yo salimos de la casa para darle la vuelta a la parcela y poder vigilar desde el otro lado. Esa ardilla gigante podía escapar hacia cualquier lado."
+            oliver "Bien, yo voy moviendo el arbusto desde este lado para asustarla, y vosotros miráis por ese lado para cogerla. Id haciendo también lo mismo, y yo me encargo de vigilar este lado."
+            player "¡Sí capitán!"
+
+            menu movebush:
+                "Mover levemente":
+                    $ peaceful += 1
+                    "Agité cuidadosamente el arbusto, pero no parecía moverse nada."
+                    oliver "¡Con más fuerza chicos! ¡Así!"
+                    "Oliver empezó a agitar tan fuerte que toda la nieve del arbusto empezó a caer. Vimos como la ardilla salía disparada hacia nosotros."
+                    namine "¡Es enorme!"
+                    "La ardilla gigante me pisó la cara y la usó de trampolín para luego salir huyendo en dirección opuesta a nosotros."
+                    oliver "¡Que se escapa! ¡Vamos!"
+                "Mover fuertemente":
+                    $ agressive += 1
+                    "Agité el arbusto con fuerza, tanto que la nieve empezó a caer de él."
+                    oliver "¡Así se hace chicos! ¡Seguid así!"
+                    "De repente, la ardilla gigante salío del arbusto hacia Oliver, pisándole la cara y usándola de trampolín para saltar la pequeña valla. Huyendo en dirección opuesta de Naminé y yo."
+                    "Oliver parecía algo cabreado mientras señalaba a la dirección donde corría el animal."
+                    oliver "¡Maldito bichejo! ¡Vamos que no escape!"
+            label after_movebush:
+
+            "Saltó los arbustos y la valla como si nada a la vez que yo me levantaba para luego los tres salir corriendo a por el animal."    
+            naminé "¿¡Por qué... estamos corriendo... detrás de ella... si ya se ha ido!?"
+            oliver "¡Hay que darle una lección al peludo!"
+            player "¡Lección... la que nos está dando... a nosotros!"
+            oliver "¡Venga, seguid corriendo! ¡No hay que perderla de vista!"
+
     label after_prologue:       
 
     # Finaliza el juego:
