@@ -165,7 +165,7 @@ label start:
 
     player "(¡¿Un montón de cajas?!)"
 
-    menu minigames:
+    menu minigame_1:
         
         "Saltar":
             play sound "sounds/box-crash.ogg"
@@ -177,11 +177,11 @@ label start:
             "Logré esquivarlas fácilmente, pasando solo por un lado."
             player "(Demasiado fácil.)"
             
-    label after_minigames:
+    label after_minigame_1:
 
     player "(¡¿Hielo?!)"
 
-    menu minigames_2:
+    menu minigame_2:
         
         "Correr":
             play sound "sounds/body-fall.ogg"
@@ -193,11 +193,11 @@ label start:
             "Salté y me deslicé por el hielo cual pingüino."
             player "(¡Esto tampoco me va a parar!)"
             
-    label after_minigames_2:
+    label after_minigame_2:
 
     player "(¡¿Un cartel sujetado por dos hombres?!)"    
 
-    menu minigames_3:
+    menu minigame_3:
         
         "Agachar":
             play sound dodge
@@ -209,7 +209,7 @@ label start:
             player "¡Perdón!"
             $ fails_minigame += 1
             
-    label after_minigames_3:
+    label after_minigame_3:
 
     stop music fadeout 1.0   
     # Fin minijuego obstáculos
@@ -495,6 +495,25 @@ label start:
             oliver "¡Hay que darle una lección al peludo!"
             player "¡Lección... la que nos está dando... a nosotros!"
             oliver "¡Venga, seguid corriendo! ¡No hay que perderla de vista!"
+            "La ardilla gigante no para de correr. Era veloz y ágil. Todo lo que se avecinaba lo esquivaba y evitaba con suma facilidad."
+            oliver "¡No me puedo creer que el bichejo corra más que yo!"
+
+            menu squirrel_minigame_1:
+        
+                "Atajar":
+                    "Me conocía estos caminos como la palma de mi mano. Así que decidí atajar para rodearla."
+                    namine "¡¿A dónde vas, [name]?!"
+                    "Fui corriendo metiéndome por el campo hasta bajar al río. Allí decidí coger por la derecha, siguiendo el rumbo que normalmente cogía el agua, ahora congelada."
+                    player "(Si Oliver sabe por donde voy a correr, seguramente entenderá que tiene que hacer.)"
+                    "O al menos eso pensé."
+                    
+
+                "Seguir con el grupo":
+                    play sound dodge
+                    "Logré esquivarlas fácilmente, pasando solo por un lado."
+                    player "(Demasiado fácil.)"
+                    
+            label after_squirrel_minigame_1:
 
     label after_prologue:       
 
