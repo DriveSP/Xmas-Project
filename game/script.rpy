@@ -510,8 +510,8 @@ label start:
 
                 "Seguir con el grupo":
                     play sound dodge
-                    "Logré esquivarlas fácilmente, pasando solo por un lado."
-                    player "(Demasiado fácil.)"
+                    #"Logré esquivarlas fácilmente, pasando solo por un lado."
+                    #player "(Demasiado fácil.)"
                     
             label after_squirrel_minigame_1:
 
